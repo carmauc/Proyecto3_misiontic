@@ -1,58 +1,38 @@
 package com.example.proyecto_c32.modelo;
-import java.text.SimpleDateFormat;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Entity
 @Table (name="motivo_consulta")
-public class motivo_consulta {
+public class Motivo_consulta{
 @Id
 @GeneratedValue (strategy = GenerationType.AUTO)
-
 @Column(name="id_motivoconsulta")
 private int id_motivoconsulta;
 @Column(name="motivo")
 private String motivo;
 @Column(name="hora_llegada")
 private String hora_llegada;
+
+/* @ManyToOne
+@JoinColumn (name= "id_paciente")
+Paciente paciente;
+} */
 @ManyToOne
-@JoinColumn (name = "id_pacientes")
-@JsonBackReference
-    private pacientes pacientes;
-public int getId_motivoconsulta() {
-    return id_motivoconsulta;
-}
-public String getMotivo() {
-    return motivo;
-}
-public String getHora_llegada() {
-    return hora_llegada;
-}
-public pacientes getPacientes() {
-    return pacientes;
-}
-public void setId_motivoconsulta(int id_motivoconsulta) {
-    this.id_motivoconsulta = id_motivoconsulta;
-}
-public void setMotivo(String motivo) {
-    this.motivo = motivo;
-}
-public void setHora_llegada(String hora_llegada) {
-    this.hora_llegada = hora_llegada;
-}
-public void setPacientes(pacientes pacientes) {
-    this.pacientes = pacientes;
-}
+/*  @JoinColumn (name= "id_paciente", referencedColumnName= "id")
+ */Paciente paciente;
+} 
 
-
-
-
-}

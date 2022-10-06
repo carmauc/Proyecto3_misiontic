@@ -2,10 +2,10 @@ package com.example.proyecto_c32.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import com.example.proyecto_c32.modelo.pacientes;
+import com.example.proyecto_c32.modelo.Exploracion_fisica;
 
 @Repository
-public interface diagnostico_presuntivo_respository extends JpaRepository<pacientes, Integer> {
+public interface Exploracion_fisica_repository extends JpaRepository<Exploracion_fisica, Integer> {
+
     
 }
